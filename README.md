@@ -1,5 +1,7 @@
 # gun.js
 
+<a href="https://win5do.github.io/gun.js/" target="_blank">Preview LiveDemo</a>
+
 a fullpage scroll plugin for Zepto &amp; jQuery
 
 短小轻快的fullpage滚动插件，适用于zepto和jquery，适用于支持css3的浏览器，支持拥有滚轮、上下方向键、及触摸事件，兼容pc端和移动端

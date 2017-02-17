@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>lite quickly fullpage plugin for jQuery and Zepto</title>
+  <title>gun.js——fullpage plugin for jQuery and Zepto</title>
   <link rel="stylesheet" href="libs/gun.css">
   <style>
     * {
@@ -40,6 +40,7 @@
     
     .gun-li {
       list-style-type: none;
+      background: orange;
       border: 1px solid #000;
       width: 50px;
       height: 50px;
@@ -48,13 +49,18 @@
       align-items: center;
       cursor: pointer;
     }
+    .intro {
+      text-align: center;
+    }
   </style>
 </head>
 
 <body>
   <div class="gun-wrap">
     <div class="gun-content">
-      <div class="gun-page page1"></div>
+      <div class="gun-page page1">
+        <h2 class="intro">尝试滚动滚轮、按下箭头键、移动端触摸操作或点击导航</h2>
+      </div>
       <div class="gun-page page2"></div>
       <div class="gun-page page3"></div>
       <div class="gun-page page4"></div>
@@ -68,8 +74,8 @@
       <li class="gun-li">5</li>
     </ul>
   </div>
-  <!--<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>-->
-  <script src="http://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+  <!--<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>-->
+  <script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
   <script src="libs/gun.js"></script>
   <script>
     $('.gun-page').gun({
