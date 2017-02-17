@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>lite quickly fullpage plugin for jQuery and Zepto</title>
+  <link rel="stylesheet" href="libs/gun.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .page1 {
+      background: palegoldenrod;
+    }
+    
+    .page2 {
+      background: palegreen;
+    }
+    
+    .page3 {
+      background: palevioletred;
+    }
+    
+    .page4 {
+      background: peru;
+    }
+    
+    .page5 {
+      background: pink;
+    }
+    
+    .gun-nav {
+      position: fixed;
+      right: 2%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    
+    .gun-li {
+      list-style-type: none;
+      border: 1px solid #000;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="gun-wrap">
+    <div class="gun-content">
+      <div class="gun-page page1"></div>
+      <div class="gun-page page2"></div>
+      <div class="gun-page page3"></div>
+      <div class="gun-page page4"></div>
+      <div class="gun-page page5"></div>
+    </div>
+    <ul class="gun-nav">
+      <li class="gun-li">1</li>
+      <li class="gun-li">2</li>
+      <li class="gun-li">3</li>
+      <li class="gun-li">4</li>
+      <li class="gun-li">5</li>
+    </ul>
+  </div>
+  <!--<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>-->
+  <script src="http://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+  <script src="libs/gun.js"></script>
+  <script>
+    $('.gun-page').gun({
+      nav: 'gun-li'
+    });
+  </script>
+</body>
+
+</html>
