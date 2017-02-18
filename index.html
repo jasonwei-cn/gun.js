@@ -5,61 +5,24 @@
   <meta charset="UTF-8">
   <title>gun.js——fullpage plugin for jQuery and Zepto</title>
   <link rel="stylesheet" href="libs/gun.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
-    
-    .page1 {
-      background: palegoldenrod;
-    }
-    
-    .page2 {
-      background: palegreen;
-    }
-    
-    .page3 {
-      background: palevioletred;
-    }
-    
-    .page4 {
-      background: peru;
-    }
-    
-    .page5 {
-      background: pink;
-    }
-    
-    .gun-nav {
-      position: fixed;
-      right: 2%;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    
-    .gun-li {
-      list-style-type: none;
-      background: orange;
-      border: 1px solid #000;
-      width: 50px;
-      height: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-    }
-    .intro {
-      text-align: center;
-    }
-  </style>
 </head>
 
 <body>
-  <div class="gun-wrap">
-    <div class="gun-content">
+  <div class="gun-wrap wrap1">
+    <div class="content1">
       <div class="gun-page page1">
-        <h2 class="intro">尝试滚动滚轮、按下箭头键、移动端触摸操作或点击导航</h2>
+        <div class="intro">
+          <h2>gun.js</h2>
+          <p>lite quickly css3 zepto jquery</p>
+          <p>try use mousewheel，arrow key or touchmove in mobile mode</p>
+        </div>
+        <div class="gun-wrap wrap2">
+          <div class="content2 content-l">
+            <div class="gun-page2 page-l page3">1</div>
+            <div class="gun-page2 page-l page4">2</div>
+            <div class="gun-page2 page-l page5">3</div>
+          </div>
+        </div>
       </div>
       <div class="gun-page page2"></div>
       <div class="gun-page page3"></div>
@@ -74,12 +37,15 @@
       <li class="gun-li">5</li>
     </ul>
   </div>
-  <!--<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>-->
-  <script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+  <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+  <!--<script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>-->
   <script src="libs/gun.js"></script>
   <script>
     $('.gun-page').gun({
       nav: 'gun-li'
+    });
+    $('.gun-page2').gun({
+      landscape: true
     });
   </script>
 </body>

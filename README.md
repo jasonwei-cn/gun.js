@@ -4,11 +4,11 @@
 
 a fullpage scroll plugin for Zepto &amp; jQuery
 
-短小轻快的fullpage滚动插件，适用于zepto和jquery，适用于支持css3的浏览器，支持拥有滚轮、上下方向键、及触摸事件，兼容pc端和移动端
+短小轻快的fullpage滚动插件，适用于zepto和jquery，适用于支持css3的现代浏览器，支持拥有滚轮、上下方向键、及触摸事件，兼容pc端和移动端
 
 ## usage
 
-1. 引入zepto或者jquery
+1. 引入zepto或者jquery然后引入gun.js
 
 2. html template
     
@@ -29,21 +29,13 @@ a fullpage scroll plugin for Zepto &amp; jQuery
     <!--包裹层必须使用gun.wrap和gun-content作为class，需要多少页面就写多少个div.gun-page，可以设置多个class来自定义每页的css-->
     ```
           
-3. 引入gun.js,引入或复制gun.css进你的main.css
+3. 自定义式样
+    
+    页面大小可自定义，横向滚动需设置容器为flex或float，css请参考gun.css
 
     ```css
-    /* gun.css */
-    html,
-    body,
-    .gun-wrap,
-    .gun-content,
-    .gun-page {
-        width: 100%;
-        height: 100%;
-    }
-
-    .gun-wrap,
-    .gun-page {
+    <!--关键式样-->
+    .page-warp {
         overflow: hidden;
     }
     ```
@@ -51,34 +43,20 @@ a fullpage scroll plugin for Zepto &amp; jQuery
 4. 执行下面的一行代码就能愉快的gun了
                         
     ```js
+    // 多个gun的clss不允许相同
     $('.gun-page').gun();
+    $('.gun-page-another').gun();
     ```
 
 5. 个性化设置，给gun()传入option参数;
 
     ```js
-    $('.gun-page').gun({time: 800, nav: 'gun-li'});
-    // option参数为对象，默认值如下:
+    // option参数可为空，传入制定传入来自定义
+    $('.gun-page').gun({time: 800, nav: 'gun-li', landscape: true});
+    // option可设置值如下:
         {
-            time: 500, // 滚动动画的时间，单位ms，默认为500
-            nav: ''  // 默认没有导航菜单，如需设置，传入导航的className，将导航写在div.gun-wrap中，自定义导航css
+            time: 500, // [Number] 滚动动画的时间，默认为500，时间单位为ms；
+            nav: 'className', // [String] 导航按钮，默认没有导航菜单；传入导航按钮的className启用，点击切换至对应屏，按钮结构和式样参考demo
+            landscape: false // [Boolean] 横向滚动，默认false；横向css需使用float或flex，参考demo
         }
-    ```
-
-    ```html
-    <div class="gun-wrap">
-        <div class="gun-content">
-            <div class="gun-page on"></div>
-            <div class="gun-page"></div>
-            <div class="gun-page"></div>
-        </div>
-        <!--nav example-->
-        <ul class="gun-nav">
-          <li class="gun-li">1</li>
-          <li class="gun-li">2</li>
-          <li class="gun-li">3</li>
-          <li class="gun-li">4</li>
-          <li class="gun-li">5</li>
-        </ul>
-    </div>
     ```
