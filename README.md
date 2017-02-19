@@ -43,9 +43,9 @@ a fullpage scroll plugin for Zepto &amp; jQuery
 4. 执行下面的一行代码就能愉快的gun了
                         
     ```js
-    // 多个gun的clss不允许相同
     $('.gun-page').gun();
-    $('.gun-page-another').gun();
+    // 支持滚动框架嵌套，多层多个gun的clsssName不允许相同
+    $('.different').gun();
     ```
 
 5. 个性化设置，给gun()传入option参数;
