@@ -2,13 +2,13 @@
     if (typeof $ === 'undefined') {
         throw new Error('require Zepto or jQuery');
     }
-
+    
     $.fn.gun = function (option) {
+        let page = this;
         let $content = this.parent();
-        let onIndex = 1;
         let onScroll = false;
-
-        // 初始化
+        let onIndex = 1;
+        // 初始化option
         if (!option || $.isEmptyObject(option)) {
             option = {
                 time: 500,
@@ -51,7 +51,7 @@
                 'transition': 'all ' + option.time / 1000 + 's ease'
             });
             // 横竖判断
-            if (option.landscape === true) {
+            if (option.landscape) {
                 $($content).css({
                     'transform': 'translateX(' + mt + '%)'
                 });
@@ -75,8 +75,8 @@
             };
 
             event = event || window.event;
-            let plusKey = option.landscape === true ? 39 : 40;
-            let minusKey = option.landscape === true ? 37 : 38;
+            let plusKey = option.landscape ? 39 : 40;
+            let minusKey = option.landscape ? 37 : 38;
             // 滚轮向下滚动event.wheelDelta为负
             if (event.wheelDelta < 0 || event.keyCode === plusKey) {
                 if (onIndex < option.pages) {
@@ -89,7 +89,6 @@
                     onIndex--;
                 }
             }
-
             setMtAndOn();
         }
 
@@ -186,5 +185,8 @@
                 }
             });
         })();
+
+        return this;
     }
+
 })($);
