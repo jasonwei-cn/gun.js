@@ -69,22 +69,23 @@
             }, option.time);
         }
 
-        function deriection() {
+        function deriection(event) {
             if (preventCombo()) {
                 return false;
             };
 
             event = event || window.event;
+            let delta = event.wheelDelta || -event.detail;
             let plusKey = option.landscape ? 39 : 40;
             let minusKey = option.landscape ? 37 : 38;
             // 滚轮向下滚动event.wheelDelta为负
-            if (event.wheelDelta < 0 || event.keyCode === plusKey) {
+            if (delta < 0 || event.keyCode === plusKey) {
                 if (onIndex < option.pages) {
                     onIndex++;
                 }
             }
             // 滚轮向上滚动event.wheelDelta为正
-            else if (event.wheelDelta > 0 || event.keyCode === minusKey) {
+            else if (delta > 0 || event.keyCode === minusKey) {
                 if (onIndex > 1) {
                     onIndex--;
                 }
@@ -93,16 +94,16 @@
         }
 
         // 滚轮事件绑定在容器上
-        $content.on('mousewheel', function () {
+        $content.on('mousewheel DOMMouseScroll', function (event) {
             event.stopPropagation();
-            deriection();
+            deriection(event);
         });
 
         // 键盘事件
         $(document).on('keyup', deriection);
 
         $('.' + option.nav).each(function (index) {
-            $(this).click(function () {
+            $(this).click(function (event) {
                 event.stopPropagation();
                 onIndex = index + 1;
                 setMtAndOn();
@@ -143,14 +144,14 @@
             var endY = 0;
 
             $content.on({
-                'touchmove': function () {
+                'touchmove': function (event) {
                     event.preventDefault();
                 },
-                'touchstart': function () {
+                'touchstart': function (event) {
                     startX = event.touches[0].clientX;
                     startY = event.touches[0].clientY;
                 },
-                'touchend': function () {
+                'touchend': function (event) {
                     event.stopPropagation();
                     if (preventCombo()) {
                         return false;
