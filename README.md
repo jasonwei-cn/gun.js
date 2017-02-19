@@ -26,7 +26,7 @@ a fullpage scroll plugin for Zepto &amp; jQuery
             <div class="gun-page"></div>
         </div>
     </div>
-    <!--包裹层必须使用gun.wrap和gun-content作为class，需要多少页面就写多少个div.gun-page，可以设置多个class来自定义每页的css-->
+    <!--需要多少页面就写多少个div.gun-page-->
     ```
           
 3. 自定义式样
@@ -43,7 +43,7 @@ a fullpage scroll plugin for Zepto &amp; jQuery
 4. 执行下面的一行代码就能愉快的gun了
                         
     ```js
-    $('.gun-page').gun();  
+    $('.gun-page').gun();
     // 可以嵌套多个滚动框架，传入不同的clsssName即可
     $('.different').gun();
     ```
